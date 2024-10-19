@@ -1,9 +1,10 @@
+IGNORE="--ignore=Makefile"
 ifeq ($(XDG_CONFIG_DIR),)
 	CONF_DIR=$(HOME)/.config
 else
 	CONF_DIR=$(XDG_CONFIG_DIR)
 endif
 install:
-	stow -S . -t $(CONF_DIR)
+	stow -S . -t $(CONF_DIR) $(IGNORE)
 uninstall:
-	stow -D . -t $(CONF_DIR)
+	stow -D . -t $(CONF_DIR) $(IGNORE)
